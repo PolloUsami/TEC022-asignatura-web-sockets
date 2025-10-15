@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io ws chat app</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <form id="login-form" class="flex flex-col self-center mt-20 w-96 border-2 px-12 py-8 gap-4">
+        <h1 class="my-2 font-semibold text-xl text-center">
+            ACCESO WS-CHAT
+        </h1>
+        <input
+            name="username"
+            placeholder="Usuario"
+            class="border-b-2 px-2.5 py-2.5 outline-none"
+            spellcheck="false"
+            required
+            />
+        <button type="submit" class="p-1.5 border-2 cursor-pointer">
+            INGRESAR
+        </button>
+    </form>
+    <div id="app" class="hidden flex-1 flex-col">
+        <div class="border-b-2 h-12 flex flex-row-reverse items-center px-2.5 gap-2.5">
+            <span class="rounded-full border-2 size-9"></span>
+            <span id="client-name">
+                USUARIO
+            </span>
+            <div class="flex flex-row flex-1 items-center">
+                <button id="salir" class="border-b-2 py-0.5 px-2.5 hover:text-red-700 hover:border-red-700 cursor-pointer">
+                    SALIR
+                </button>
+            </div>
+        </div>
+        <main class="flex flex-1 flex-col">
+            <ol id="messages" class="flex flex-col flex-1 overflow-y-scroll px-6 py-4 gap-4">
+                
+            </ol>
+            <form id="chat-form" class="border-t-2 pt-6 pb-12 px-12">
+                <div class="flex flex-row border-b-2 gap-1.5">
+                    <input
+                        name="content"
+                        placeholder="Ingrese su mensaje."
+                        class="flex-1 px-2 h-10 outline-none"
+                        required
+                        />
+                    <button type="submit" class="font-bold text-lg size-10 cursor-pointer hover:text-xl text-center tracking-tighter transition-all">
+                        &gt;&gt;&gt;
+                    </button>
+                </div>
+                
+            </form>
+        </main>
+    </div>
+    
+    
+    <script src="/wslogic.js"></script>
+</body>
+</html>
